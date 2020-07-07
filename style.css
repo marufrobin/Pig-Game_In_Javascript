@@ -1,20 +1,22 @@
 /**********************************************
 *** GENERAL
 **********************************************/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 .clearfix::after {
     content: "";
-    display: none;
+    display: table;
     clear: both;
 }
 
 body {
-    background-attachment: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
     background-size: cover;
     background-position: center;
     font-family: Lato;
@@ -30,7 +32,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
+    background-color: #fff;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
@@ -43,9 +45,12 @@ body {
     padding: 100px;
 }
 
+
+
 /**********************************************
 *** PLAYERS
 **********************************************/
+
 .player-name {
     font-size: 40px;
     text-align: center;
@@ -60,7 +65,7 @@ body {
 .player-score {
     text-align: center;
     font-size: 80px;
-    font-size: 100;
+    font-weight: 100;
     color: #EB4D4D;
     margin-bottom: 130px;
 }
@@ -80,23 +85,23 @@ body {
     color: #EB4D4D;
     top: -7px;
     right: 10px;
+
 }
 
 .player-current-box {
     background-color: #EB4D4D;
-    color: #ffffff;
+    color: #fff;
     width: 40%;
     margin: 0 auto;
     padding: 12px;
     text-align: center;
-
 }
 
 .player-current-label {
     text-transform: uppercase;
     margin-bottom: 10px;
     font-size: 12px;
-    color: #222222;
+    color: #222;
 }
 
 .player-current-score {
@@ -119,25 +124,8 @@ button {
     transition: background-color 0.3s, color 0.3s;
 }
 
-#target-score-input {
-    position: absolute;
-    width: 200px;
-    left: 50%;
-    transform: translateX(-50%);
-    align-items: flex-start;
-    text-align: center;
-    color: #555;
-    background: none;
-    border: none;
-    font-family: Lato;
-    font-size: 17.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: 300;
-    transition: background-color 0.3s, color 0.3s;
-}
 
-#target-score-header {
+.target-score-header {
     position: absolute;
     width: 200px;
     left: 50%;
@@ -153,8 +141,13 @@ button {
     transition: background-color 0.3s, color 0.3s;
 }
 
-button:hover { font-weight: 600; }
-button:hover i { margin-right: 20px; }
+button:hover {
+    font-weight: 600;
+}
+
+button:hover i {
+    margin-right: 20px;
+}
 
 button:focus {
     outline: none;
@@ -171,19 +164,39 @@ i {
     transition: margin 0.3s;
 }
 
-.btn-new { top: 45px;}
-.btn-roll { top: 403px;}
-.btn-hold { top: 457px;}
-#target-score-header { top: 510px;}
-#target-score-input { top: 565px;}
+.btn-new {
+    top: 45px;
+}
 
-#dice-1 {
+.btn-roll {
+    top: 403px;
+}
+
+.btn-hold {
+    top: 457px;
+}
+
+.target-score-header {
+    top: 510px;
+}
+
+.dice {
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
+    height: 100px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+/* #dice-1 {
     position: absolute;
     left: 45%;
     top: 200px;
     transform: translateX(-50%);
     height: 75px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    
 }
 
 #dice-2 {
@@ -193,8 +206,32 @@ i {
     transform: translateX(-50%);
     height: 75px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+} */
+
+.winner {
+    background-color: #f7f7f7;
 }
 
+.winner .player-name {
+    font-weight: 300;
+    color: #EB4D4D;
+}
 
-.winner { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 300; color: #EB4D4D; }
+/**********************************************
+*** Made By
+**********************************************/
+.dev-name {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(148, 19, 223);
+    background: none;
+    border: none;
+    font-family: Lato;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+}
